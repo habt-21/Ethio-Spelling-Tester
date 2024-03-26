@@ -1,0 +1,188 @@
+
+    <!DOCTYPE html>
+    <html lang="am">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="scripta.js"></script>
+    
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 140px;
+            height: 100%;
+            background-color: rgb(158, 3, 172);
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 20px; 
+        }
+
+        .sidebar a i {
+            margin-right: 10px;
+        }
+
+        .sidebar a:hover {
+            opacity: 0.8;
+        }
+
+        .sidebar-heading {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+   
+        main {
+            margin-left: 160px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: rgb(158, 3, 172); 
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        #text-area {
+            width: 80%;
+            height: 150px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        #input {
+            width: 80%;
+            height: 150px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+
+        #check-button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: rgb(158, 3, 172); 
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        #button2 {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: rgb(158, 3, 172); 
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        #check-button:hover {
+            opacity: 0.8;
+        }
+        #check-buttona {
+          padding: 10px 20px;
+          font-size: 1em;
+          background-color: rgb(158, 3, 172); 
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          outline: none;
+      }
+
+      #check-buttona:hover {
+          opacity: 0.8;
+      }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: rgb(158, 3, 172); 
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <a href="index.html">
+            <i class="fas fa-"></i> አማርኛ</a>
+        <a href="Afaanoromo.html">
+            <i class="fas fa-"></i> Afaan Oromoo</a>
+        
+        <br>
+    </div>
+    <main style="text-align: center;">
+        <h1><span>አ</span>ማርኛ Spelling Tester</h1>
+        <a id="check-buttona">
+            <i class="fas fa-"></i> Count the number of word in teh system</a>
+        <h2>Only Support Amharic Words</h2>
+        <textarea id="text-area" placeholder="Write Amharic text here...."></textarea>
+        <br>
+        <button id="check-button" disabled>Test</button>
+        <div id="result"></div>
+        
+  <div id="How"></div>  
+<h2>Simplifier</h2>
+<label for="input">አማርኛ Paragraph:</label><br>
+<textarea id="input" rows="4" cols="50"></textarea><br>
+<button id="button2" onclick="convert()">Convert</button>
+
+<p><strong>Result:</strong></p>
+<div id="output"></div>
+
+    </main>
+ 
+
+
+<script>
+    function convert() {
+        var inputText = document.getElementById("input").value;
+        var words = inputText.split(/[\s.,;!?።-፣_?!]+/);
+        var outputText = "";
+
+        for (var i = 0; i < words.length; i++) {
+            if (words[i] !== "") {
+                outputText += '"' + words[i] + '"';
+                if (i !== words.length - 1) {
+                    outputText += ", ";
+                }
+            }
+        }
+
+        document.getElementById("output").textContent = outputText;
+    }
+</script>
+
+
+
+</body>
+
+</html>
