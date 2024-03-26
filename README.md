@@ -1,1 +1,2 @@
-This is Web-based Ethiopian writeng helper by testing spelling.
+This is Web-based Ethiopian writing
+helper by testing spelling.
